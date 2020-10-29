@@ -2,8 +2,11 @@ package dp;
 
 import java.util.Arrays;
 
-// https://en.wikipedia.org/wiki/Longest_increasing_subsequence in O(n*log(n))
-public class Lis {
+// https://en.wikipedia.org/wiki/Longest_increasing_subsequence  in O(n * log(n))
+public class LIS {
+
+    // returns the longest increasing subsequence 
+    // and traces that as well
     public static int[] lis(int[] a) {
         int n = a.length;
         int[] tail = new int[n];
@@ -24,6 +27,15 @@ public class Lis {
         return res;
     }
 
+
+    // returns length of longest increasing subsequence
+    public static int getLisLength(int[] a){
+        int[] lis = lis(a);
+        return lis.length;
+    }
+
+
+
     static int lower_bound(int[] a, int[] tail, int len, int key) {
         int lo = -1;
         int hi = len;
@@ -41,6 +53,8 @@ public class Lis {
     // Usage example
     public static void main(String[] args) {
         int[] lis = lis(new int[] {1, 10, 2, 11, 3});
+        int lisLength = getLisLength(new int[] {1, 10, 2, 11, 3});
+        System.out.println("lis length = " + lisLength);
         System.out.println(Arrays.toString(lis));
     }
 }
