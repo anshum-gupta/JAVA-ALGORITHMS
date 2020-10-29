@@ -35,7 +35,9 @@ public class Lis {
     }
 
 
-
+    // unlike C++, java does not have an inbuilt lower_bound
+    // although we do have binary search, but decided to impelement
+    // it myself
     static int lower_bound(int[] a, int[] tail, int len, int key) {
         int lo = -1;
         int hi = len;
