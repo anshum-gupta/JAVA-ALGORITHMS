@@ -6,6 +6,8 @@ public class DominoFill {
      * ..234
      * 01
      */
+
+     // filling dominos
     public static int method1(int R, int C) {
         int[] prev = new int[1 << C];
         prev[(1 << C) - 1] = 1;

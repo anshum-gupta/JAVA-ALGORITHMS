@@ -3,7 +3,7 @@ package dp;
 import java.util.Arrays;
 
 // https://en.wikipedia.org/wiki/Longest_increasing_subsequence  in O(n * log(n))
-public class LIS {
+public class Lis {
 
     // returns the longest increasing subsequence 
     // and traces that as well
