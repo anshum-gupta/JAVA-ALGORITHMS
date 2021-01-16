@@ -1,0 +1,13 @@
+/Calc2$TOKEN.class
+/Calc2.class
+/ExpressionParserRecursiveDescent.class
+/ExpressionParserShuntingYard.class
+/RecursiveDescentParser$Command.class
+/RecursiveDescentParser$Compiler.class
+/RecursiveDescentParser$Lexeme.class
+/RecursiveDescentParser$Lexer.class
+/RecursiveDescentParser$Node.class
+/RecursiveDescentParser$Nonterminal.class
+/RecursiveDescentParser$Parser.class
+/RecursiveDescentParser$VirtualMachine.class
+/RecursiveDescentParser.class

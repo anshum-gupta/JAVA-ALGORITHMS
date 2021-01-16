@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class GraphCycleDetection {
+public class GraphCycleDetection {	
     public static int[] findCycle(List<Integer>[] graph) {
         int n = graph.length;
         int[] color = new int[n];
@@ -46,10 +46,12 @@ public class GraphCycleDetection {
 
     // Usage example
     public static void main(String[] args) {
-        List<Integer>[] graph = Stream.generate(ArrayList::new).limit(3).toArray(List[] ::new);
+        List<Integer>[] graph = Stream.generate(ArrayList::new).limit(4).toArray(List[] ::new);
         graph[0].add(1);
         graph[1].add(2);
-        graph[2].add(0);
+        graph[2].add(3);
+        graph[3].add(0);
+        
         int[] cycle = findCycle(graph);
         System.out.println(Arrays.toString(cycle));
     }

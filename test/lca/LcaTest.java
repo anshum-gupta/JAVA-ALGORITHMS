@@ -34,7 +34,7 @@ public class LcaTest {
     }
 
     static List<Integer>[] getRandomTree(int n, Random rnd) {
-        List<Integer>[] t = Stream.generate(ArrayList::new).limit(n).toArray(List[] ::new);
+        List<Integer>[] t = Stream.generate(ArrayList::new).limit(n).toArray(List[] :: new);
         int[] p = new int[n];
         for (int i = 0, j; i < n; j = rnd.nextInt(i + 1), p[i] = p[j], p[j] = i, i++)
             ; // random permutation

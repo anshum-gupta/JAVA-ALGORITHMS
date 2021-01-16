@@ -3,16 +3,20 @@ package dp;
 import java.util.*;
 
 public class MatrixChainMultiply {
-    public static int solveIterative(int[] s) {
-        int n = s.length - 1;
-        int[][] p = new int[n][n];
-        int[][] m = new int[n][n];
-        for (int len = 2; len <= n; len++) {
-            for (int a = 0; a + len <= n; a++) {
+	
+	// gives the minimum number of matrix multiplications
+	// required to multiply the sequence
+	
+    public static int solveIterative(int[] input) {
+        int inputLength = input.length - 1;
+        int[][] p = new int[inputLength][inputLength];
+        int[][] m = new int[inputLength][inputLength];
+        for (int len = 2; len <= inputLength; len++) {
+            for (int a = 0; a + len <= inputLength; a++) {
                 int b = a + len - 1;
                 m[a][b] = Integer.MAX_VALUE;
                 for (int c = a; c < b; c++) {
-                    int v = m[a][c] + m[c + 1][b] + s[a] * s[c + 1] * s[b + 1];
+                    int v = m[a][c] + m[c + 1][b] + input[a] * input[c + 1] * input[b + 1];
                     if (m[a][b] > v) {
                         m[a][b] = v;
                         p[a][b] = c;
@@ -20,15 +24,15 @@ public class MatrixChainMultiply {
                 }
             }
         }
-        return m[0][n - 1];
+        return m[0][inputLength - 1];
     }
 
-    public static int solveRecursive(int[] s) {
-        int n = s.length - 1;
-        int[][] cache = new int[n][n];
+    public static int solveRecursive(int[] input) {
+        int inputLength = input.length - 1;
+        int[][] cache = new int[inputLength][inputLength];
         for (int[] x : cache) Arrays.fill(x, INF);
-        int[][] p = new int[n][n];
-        return rec(0, n - 1, s, p, cache);
+        int[][] p = new int[inputLength][inputLength];
+        return rec(0, inputLength - 1, input, p, cache);
     }
 
     static final int INF = Integer.MAX_VALUE / 3;
